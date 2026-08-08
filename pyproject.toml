@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cogvideox-drama-mcp"
+version = "0.1.0"
+description = "漫剧生成 MCP 工具：输入剧本，自动分镜生成视频（智谱 CogVideoX）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["mcp", "video", "漫剧", "cogvideox"]
+dependencies = [
+    "mcp>=1.9.2",
+    "requests>=2.20.0",
+    "python-dotenv>=1.0.0",
+    "langchain-openai>=0.2.0",
+]
+
+[project.scripts]
+cogvideox-drama-mcp = "seedance_mcp:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/seedance_mcp"]
